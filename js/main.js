@@ -165,9 +165,17 @@ let cars = [
 
 
 
-let filtered = cars.filter(item => {
-    if (item.mark === cars.mark) {
+// let filtered = cars.filter(item => {
+//     if (item.mark === cars.mark) {
+//         return item
+//     }
+// })
+// console.log(filtered);
+
+cars.filter(item => {
+    if (item.mark === true) {
         return item
+    } else {
+        characters.mark++
     }
 })
-console.log(filtered);
