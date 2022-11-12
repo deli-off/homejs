@@ -1,12 +1,12 @@
 
 let car = {
-    mark: prompt('car mark'),
+    mark: "prompt('car mark')",
     color: "prompt('color')",
     engine: "prompt('engine force')",
     year: "prompt('year')",
     hasHatch: "confirm('hatch')",
     isBox: "confirm('automat or mechanic')",
-    price: prompt('price')
+    price: "prompt('price')"
 }
 
 let cars = [
@@ -271,3 +271,20 @@ let cars = [
 //     }
 // }
 
+let old = cars.reduce((a, b) => a.year < b.year ? a : b);
+console.log(old);
+
+cars.forEach(item => {
+    document.write(`
+        <div class = "block">
+            Mark: <b>${item.mark}</b>  <i style = "color: ${item.color};">${item.color}</i>  <br>
+            Hashatch: <b>${item.hasHatch}</b> <br>
+            Is box: <b>${item.isBox}</b> <br>
+            <img  src="${item.img}" alt = "${item.mark}" /> <br>
+
+            <div class = "year">
+                <div class = "fill"></div>
+            </div>
+        </div>
+    `)
+})
