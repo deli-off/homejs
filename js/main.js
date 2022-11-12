@@ -272,7 +272,7 @@ let cars = [
 // }
 
 let max = cars.reduce((a, b) => a.price < b.price ? a : b);
-console.log(old);
+
 
 cars.forEach(item => {
     let prc = item.price * 100 / max.price
@@ -285,7 +285,7 @@ cars.forEach(item => {
             <img  src="${item.img}" alt = "${item.mark}" /> <br>
 
             <div class = "price">
-                <div class = "fill"  style = "width: ${prc}%;"></div>
+                <div class = "fill"  style = "width: ${prc}% ;"></div>
             </div>
         </div>
     `)
