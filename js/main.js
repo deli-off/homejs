@@ -271,10 +271,12 @@ let cars = [
 //     }
 // }
 
-let old = cars.reduce((a, b) => a.year < b.year ? a : b);
+let max = cars.reduce((a, b) => a.price < b.price ? a : b);
 console.log(old);
 
 cars.forEach(item => {
+    let prc = item.price * 100 / max.price
+
     document.write(`
         <div class = "block">
             Mark: <b>${item.mark}</b>  <i style = "color: ${item.color};">${item.color}</i>  <br>
@@ -282,8 +284,8 @@ cars.forEach(item => {
             Is box: <b>${item.isBox}</b> <br>
             <img  src="${item.img}" alt = "${item.mark}" /> <br>
 
-            <div class = "year">
-                <div class = "fill"></div>
+            <div class = "price">
+                <div class = "fill"  style = "width: ${prc}%;"></div>
             </div>
         </div>
     `)
