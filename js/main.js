@@ -298,6 +298,8 @@ let max = cars.reduce((a, b) => a.price > b.price ? a : b);
 cars.forEach(item => {
     let prc = item.price * 100 / max.price
 
+
+
     document.write(`
         <div class = "block">
             <h3>car id: ${item.id}</h3>
@@ -312,8 +314,29 @@ cars.forEach(item => {
             </div>
         </div>
     `)
+
 })
 
 setTimeout(() => {
-    prompt('which car')
+    let selectId = prompt('Wich car')
+
+    cars.filter(item => {
+        if (selectId === item.id) {
+            document.write(`
+                <div class = "block">
+                    <h3>car id: ${item.id}</h3>
+
+                    Mark: <b>${item.mark}</b>  <i style = "color: ${item.color};">${item.color}</i>  <br>
+                    Hashatch: <b>${item.hasHatch}</b> <br>
+                    Is box: <b>${item.isBox}</b> <br>
+                    <img  src="${item.img}" alt = "${item.mark}" /> <br>
+
+                    <div class = "price">
+                        <div class = "fill"  style = "width: ${prc}% ;"></div>
+                    </div>    
+                </div>
+            `)
+            item.splice(1, cars)
+        }
+    })
 }, 3000);
